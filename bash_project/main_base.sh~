@@ -1,0 +1,42 @@
+#!/usr/bin/bash
+
+select choice in "create table" "List tables" "insert into table" "search from table" "View table" "drop table" "delect from table"
+do
+	case $choice in
+		"create table")
+			echo "Please enter the name of the table : "
+			read table
+			echo "Please enter your coloumns' names"
+			read col
+			. ./create_table.sh $table $col
+				
+			;;
+
+		"List tables")			
+				ls ./RDBMS/database/$data_base/
+			;;
+		"insert into table")
+			. ./insert.sh
+
+			;;
+		"search from table")
+		
+		. ./search.sh
+			;;
+		"View table")
+			. ./view.sh
+			;;
+
+		"drop table")
+ 			echo "enter the name of the table to drop"
+			read dbname
+			./droptable.sh $dbname
+			
+			;;
+		"delect from table")
+			
+			./delet_fromtable.sh
+			;;
+		esac
+
+done

@@ -1,0 +1,13 @@
+#!/usr/bin/bash
+
+mkdir ./RDBMS/$database/$1
+cd ./RDBMS/$database/$1
+touch ./RDBMS/$database/$1/Header
+touch ./RDBMS/$database/$1/data
+
+echo "$2" >> ./Header
+
+
+#cd ~
+#cd ./Desktop
+. ./main_base.sh

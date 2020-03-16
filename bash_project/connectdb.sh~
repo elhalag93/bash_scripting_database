@@ -1,0 +1,63 @@
+#! /bin/bash
+
+flag="false"
+for i in ./RDBMS/database/*
+do
+	if [ "$i" == "./RDBMS/database/$1" ]
+	then
+		flag="true"
+		break
+	fi
+done
+if [ "$flag" == 'true' ]
+then
+    
+select choice in "Create Table" "List Tables" "Drop Table" "Insert into Table" "Select From Table" "Delete From Table"
+do
+	case $choice in
+		"Create Table")
+		   table")
+			echo "Please enter the name of the table : "
+			read table
+			echo "Please enter your coloumns' names"
+			read col
+			. ./create_table.sh $table $col
+		
+		;;
+
+		"List Tables") 
+		      ls ./RDBMS/$data_base/
+		;;
+		
+
+		"Drop Table") 
+	         	echo "Drop Table"
+		      
+		;;
+
+
+
+		"Insert into Table") 
+		. ./insert.sh
+		
+		;;
+
+
+	        
+		"Select From Table")
+                         . ./search.sh
+		 
+		;;
+
+
+
+		"Delete From Table")  
+		    echo "Delete From Table"
+	       
+		;;
+
+		 esac
+	
+                 done
+fi
+
